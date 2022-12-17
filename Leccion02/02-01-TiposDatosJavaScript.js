@@ -34,6 +34,43 @@ console.log(miFuncion);
 console.log(typeof miFuncion);
 
 //Tipo de dato Symbol:
-let symbol = Symbol();
+let symbol = Symbol("$$$$lili$$$$");
 console.log(symbol);
 console.log(typeof symbol);
+
+//Tipo clase es una function:
+class Persona{
+	constructor(nombre, apellido){
+		this.nombre;
+		this.apellido;
+	}
+}
+console.log(Persona);
+console.log(typeof Persona);
+
+//Tipo undefined:
+let x;
+console.log(x);
+console.log(typeof x);
+
+x = undefined;
+console.log(x);
+console.log(typeof x);
+
+// null= ausencia de valor
+let y = null;
+console.log(y);
+console.log(typeof y);
+
+//Arrays: Los arreglos en js son de tipo 'object':
+let autos = ['BMW','Audi','Volvo'];
+console.log(autos);
+console.log(typeof autos);
+
+//Empty string: Sigue siendo de tipo string.
+var z = '';
+console.log(z);
+console.log(typeof z);
+
+
+
