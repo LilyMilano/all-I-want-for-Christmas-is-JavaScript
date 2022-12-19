@@ -128,3 +128,42 @@ console.log( y ); // false
 
 y = h >= i;
 console.log( y ); // true
+
+//______________________________________________________________________
+// Operadores Lógicos:
+
+// Operador AND ( && ):
+
+let valor = -5;
+let valMin = 0, valMax =  10;
+
+if(valor >= valMin && valor <= valMax) {  // Ambas expresiones deben ser verdaderas
+    console.log("Dentro de rango");
+}
+else {
+    console.log("Fuera de rango");  // Fuera de rango
+}
+
+// Operador OR ( || ): Si alguno de los operandos es true, el resultado es true.
+// Un padre puede asistir a ver el juego de su hijo siempre y cuando tenga un día de descanso O tenga vacaciones. De locontrario, no podrá asistir. 
+
+let vacaciones = true, diaDescanso = false;
+
+if( vacaciones || diaDescanso) {
+    console.log( "El padre puede asistir al juego del hijo" );
+}
+else {
+    console.log( "El padre está ocupado, no podrá asistir" );
+}
+
+//______________________________________________________________________
+// Operador Ternario: El operador condicional (ternario) es el único operador en JavaScript que tiene tres operandos. Este operador se usa con frecuencia como atajo para la instrucción if.
+// Sintaxis: condición ? expr1(true) : expr2(false)
+
+let resultado = ( 1 > 2 ) ? "verdadero" : "falso";
+console.log( resultado ); // falso
+
+//Ejercicio número par o impar:
+numero = 11;
+resultado = ( numero % 2 == 0 ) ? "Número par" : "Número impar";
+console.log( resultado ); // Número impar
