@@ -100,13 +100,14 @@ console.log(result); // Log: 8
 //? Parameters (a, b): are the names listed in the function's definition.
 //? Arguments (1, 2): are the real values passed to the function.
 
-let add = function (a = 3, b = 4) { // Default values
+let add = function (a = 3, b = 4) {
+	// Default values
 	console.log(arguments[0]); // Log: 1
 	console.log(arguments[1]); // Log: 2
 	console.log(arguments[2]); // Log: 7 (push value)
 	return a + b + arguments[2];
 };
-let response = add(1, 2, 7); 
+let response = add(1, 2, 7);
 console.log(response); // Log: 10
 
 // Real arguments re-write default values. If real values are not assigned, JS uses default values and the response would be add = 7
@@ -115,15 +116,52 @@ console.log(response); // Log: 10
 
 //? example: adding arguments:
 
-let output = addArguments(5, 4, 13, 10, 9);
-console.log(output);
+let output = addArguments(5, 4, 13, 10, 9, 9);
+console.log(output); // Log: 50
 
-function addArguments(){
+function addArguments() {
 	sum = 0;
-	for(let i = 0; i < arguments.length; i++){
-		sum += arguments[i];	// sum = sum + arguments[i]
+	for (let i = 0; i < arguments.length; i++) {
+		sum += arguments[i]; // sum = sum + arguments[i]
 	}
 	return sum;
 }
 
 //__________________________________________________________________________
+
+//? Pass by value and Pass by Reference in JavaScript.
+
+/* Pass By Value (primitive value) : function is called by directly passing the value of the variable as an argument. So any changes made inside the function does not affect the original value. It doesn't apply to Objects because doesn't have neither properties nor methods.
+ */
+
+//* Primitive type data:
+let x = 10;
+
+function changeValue(a) {
+	a = 20;
+	return;
+}
+
+changeValue(x);
+console.log(x); // Log:10 - Changes made inside the function does not affect the original value
+
+//console.log(a);		// a is not defined out the method
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+/* Pass by Reference: Changing the variable value inside the function also change the original value. In JavaScript array and Object follows pass by reference property.
+ */
+
+const person = {
+	name: 'Juan',
+	surname: 'Perez',
+};
+console.log(typeof person); // Log: object
+
+function changeObjectValue(p1) {
+	p1.name = 'Carlos';
+	p1.surname = 'Lara';
+}
+
+changeObjectValue(person);
+console.log(person); 	// { name: 'Carlos', surname: 'Lara' }
