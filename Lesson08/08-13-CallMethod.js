@@ -1,0 +1,1 @@
+//With the call() method, you can write a method that can be used on different objects.
