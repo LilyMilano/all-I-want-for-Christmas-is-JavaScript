@@ -1,27 +1,10 @@
-//?Classes: are a template for creating objects.
-/*They encapsulate data with code 
-to work on that data. The class defines the attributes and methods common to 
-objects of that type, but then, each object will have its own values and share 
-the same functions.
-
-We must create a class before we can create objects (instances) of that class. 
-When you create an object of a class, you are said to create an instance of the 
-class or an object itself.
-*/
-
-//.............................................................................
-//? Method Static . Static class methods are defined on the class itself.
-//? You cannot call a static method on an object, only on an object class.
-//.............................................................................
-
-//!let person2 = new Person('Karla', 'Juarez');    //  Cannot access 'Person' before initialization
-//! Hoisting concept does not apply
-
 //* class Person extends Object (The Object class is the parent class of all classes in JavaScript. Therefore, inherits all of its methods -e.g.toString-).
 
 class Person {
 
-	static personObjectCounter = 0;	// Static Attribute
+	static personObjectCounter = 0; //! Static- Class Attribute
+
+    email =  'Default email'; //! Objects Attribute
 
 	constructor(name, surname) {
 		this._name = name;
@@ -56,32 +39,17 @@ class Person {
 		return this.fullName();
 	}
 
-	static hello(){
+	static hello() {
 		console.log('greetings from static method');
 	}
 
 	// A static method can receive an Object as argument:
-	static hello2(person){
-		console.log(person.name + ' ' + person._surname);	//  Karla Juarez
+	static hello2(person) {
+		console.log(person.name + ' ' + person._surname); //  Karla Juarez
 	}
 }
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-//? constructor, get, set, fullName and toString are different Methods of the Person Class, so they are not separated by commas.
-
-let person1 = new Person('Juan', 'Perez');
-console.log(person1); //  Person { _name: 'Juan', _surname: 'Perez' }
-
-//Get:
-console.log(person1.name); //  Juan
-
-//Set:
-person1.name = 'Juan Carlos';
-console.log(person1.name); //  Juan Carlos
-
-//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
 //? Class Inheritance:
 
 //let employee1 = new Employee();   //TODO:   Must call super constructor in derived class before accessing 'this' or returning from derived constructor
@@ -108,9 +76,9 @@ class Employee extends Person {
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-let person2 = new Person('Karla', 'Juarez');
+let person1 = new Person('Karla', 'Juarez');
 
-console.log(person2.toString()); //? Karla Juarez (Polymorphism: Called from Parent Class)
+console.log(person1.toString()); //? Karla Juarez (Polymorphism: Called from Parent Class)
 
 // ...........................................................................
 
@@ -124,18 +92,21 @@ console.log(employee1.toString()); //?  Mary Smith, IT  (Polymorphism: Called fr
 
 // ...........................................................................
 //TODO You cannot call a static method or property on an object, only on an object class.
-//TODO person2.hello(); 		//	person2.hello is not a function
+//TODO person1.hello(); 		//	person1.hello is not a function
 
-Person.hello(); 	//  greetings from static method 
-Person.hello2(person2);		//  Karla Juarez (A static method can receive an Object as argument)
+Person.hello(); //  greetings from static method
+Person.hello2(person1); //  Karla Juarez (A static method can receive an Object as argument)
 
-Employee.hello();	//  greetings from static method 
-Employee.hello2(employee1);		//  Mary Smith
+Employee.hello(); //  greetings from static method
+Employee.hello2(employee1); //  Mary Smith
 
 //TODO static properties:
-console.log(person2.personObjectCounter);	// undefined
-console.log(Person.personObjectCounter);	// 3
-console.log(Employee.personObjectCounter);	// 3 - Child classes inherit the static variables
+console.log(person1.personObjectCounter); // undefined
+console.log(Person.personObjectCounter); // 2
+console.log(Employee.personObjectCounter); // 2 - Child classes inherit the static variables
 
+console.log(person1.email);     //!  Default email
+console.log(employee1.email);   //!  Default email
 
-
+console.log(Person.email);      //! undefined: New static variable
+console.log(Employee.email);    //! undefined: New static variable
