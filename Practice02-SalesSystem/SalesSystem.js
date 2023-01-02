@@ -47,7 +47,7 @@ class Order {
 			this._products.push(product);
 			// this._products[this._addedProductCounter++] = product;
 		} else {
-			console.log('Reached maximum number of products allowed');  //  Reached maximum number of products allowed 
+			console.log('Reached maximum number of products allowed'); //  Reached maximum number of products allowed
 		}
 	}
 	calculateTotal() {
@@ -61,14 +61,20 @@ class Order {
 	showOrder() {
 		let productsPerOrder = '';
 		for (let product of this._products) {
-			productsPerOrder += product.toString() + ' ';
+			productsPerOrder += '\n{' + product.toString() + '}';
 		}
 
 		console.log(
 			`Order: ${
 				this._idOrder
 			} Total: ${this.calculateTotal()}, Products: ${productsPerOrder}`
-		); //  Order: 1 Total: 300, Products: idProduct: 1, name: Trouser, price: $200  idProduct: 2, name: T-shirt, price: $100
+		);  //  Order: 1 Total: 300, Products: 
+			// {idProduct: 1, name: Trouser, price: $200 }
+			// {idProduct: 2, name: T-shirt, price: $100 } 
+			// Order: 2 Total: 350, Products: 
+			// {idProduct: 3, name: Belt, price: $50 }
+			// {idProduct: 1, name: Trouser, price: $200 }
+			// {idProduct: 2, name: T-shirt, price: $100 }
 	}
 }
 
@@ -80,14 +86,21 @@ console.log(product2.toString()); //  idProduct: 2, name: T-shirt, price: $100
 let order1 = new Order();
 order1.addProduct(product1);
 order1.addProduct(product2);
-order1.showOrder(); //  Order: 1 Total: 300, Products: idProduct: 1, name: Trouser, price: $200  idProduct: 2, name: T-shirt, price: $100
+order1.showOrder();
+// Order: 1 Total: 300, Products:
+// {idProduct: 1, name: Trouser, price: $200 }
+// {idProduct: 2, name: T-shirt, price: $100 }
 
 let order2 = new Order();
 let product3 = new Product('Belt', 50);
 order2.addProduct(product3);
 order2.addProduct(product1);
 order2.addProduct(product2);
-order2.showOrder(); // Order: 2 Total: 350, Products: idProduct: 3, name: Belt, price: $50  idProduct: 1, name: Trouser, price: $200  idProduct: 2, name: T-shirt, price: $100
+order2.showOrder();
+// Order: 2 Total: 350, Products:
+// {idProduct: 3, name: Belt, price: $50 }
+// {idProduct: 1, name: Trouser, price: $200 }
+// {idProduct: 2, name: T-shirt, price: $100 }
 order2.addProduct(product3);
 order2.addProduct(product1);
 order2.addProduct(product2); // Reached maximum number of products allowed
