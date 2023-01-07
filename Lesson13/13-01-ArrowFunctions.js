@@ -37,3 +37,19 @@ const retrieveObject = () => ({ name: 'Juan', lastname: 'Lara' });
 console.log(retrieveObject()); //  { name: 'Juan', lastname: 'Lara' }
 
 // ........................................................................
+
+//? const parameterizedFunction = (message) => console.log(message);
+// If it is a single parameter we can omit the parenthesis:
+
+const parameterizedFunction = (message) => console.log(message);
+parameterizedFunction('Greetings with parameters');
+
+const multipleParameters1 = (op1, op2) => op1 + op2;
+console.log(multipleParameters1(3, 8)); //	11
+
+// If the operation is more complex:
+const multipleParameters2 = (op1, op2) => {
+	let result = op1 + op2;
+	return `Result: ${result}`;
+};
+console.log(multipleParameters2(3, 8)); //	Result: 11
