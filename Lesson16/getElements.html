@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript HTML DOM</title>
+    <style>
+        .blue {
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="heading" class="blue">JavaScript HTML DOM</h1>
+    <p id="paragraph1" class="blue">Greetings!</p>
+    <P id="paragraph2" class="blue">Greetings again!</P>
+
+    <script>
+        //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        // document.getElementById:
+        // let heading = document.getElementById('heading');
+        // console.log(`heading value: ${heading.innerHTML}`);
+        // ..............................................................
+        // let paragraph = document.getElementById('paragraph');
+        // console.log(`paragraph value: ${paragraph.innerHTML}`);
+        // ..............................................................
+        //heading.innerHTML = 'New Heading Value'; //Modifying DOM HTML
+        //paragraph.innerHTML = 'New paragraph value';
+        //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        // document.getElementByTagName:
+        // let elements = document.getElementsByTagName('p');
+        // console.log(`No. elements: ${elements.length}`);    // No. elements: 2 
+        // for(let i=0; i<elements.length; i++){
+        //     console.log(`i:${i} - ${elements[i].innerHTML}`);
+        // }
+        //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        // document.getElementByClassName:
+        // let elements = document.getElementsByClassName('blue');
+        // console.log(`No. elements: ${elements.length}`);    // No. elements: 2 
+        // ..............................................................
+        // for(let i=0; i<elements.length; i++){
+        //     console.log(`i:${i} - ${elements[i].innerHTML}`);
+        // }
+        // ..............................................................
+        // Another sintaxis to access an array element:
+        // for (let element of elements) {
+        //     console.log(`${element.innerHTML}`);
+        // }
+        //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        // document.querySelectorAll:
+        let elements = document.querySelectorAll('p.blue');
+        console.log(`No. elements: ${elements.length}`);
+        for (let element of elements) {
+            console.log(`${element.innerHTML}`);
+        }
+
+    </script>
+
+</body>
+
+</html>
