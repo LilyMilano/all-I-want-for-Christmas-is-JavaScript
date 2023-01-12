@@ -3,26 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>JavaScript Form</title>
+    <title>JavaScript HTML DOM</title>
 </head>
 
 <body>
-    <form id="form">
-        Name: <input type="text" name="name" value="Regina" />
-        <br>
-        Last Name: <input type="text" name="lastname" value="Phalange" />
-        <br>
-    </form>
-    <button onclick='showValues()'>Show</button>
-<div id="values"></div>
+    <h1 id="title">JavaScript HTML DOM</h1>
+    <button onclick="show()">Show</button>
+    <br>
     <script>
-        function showValues() {
-            let content = document.forms['form'];
-            let text = '';
-            for (let element of content) {
-                text += element.value + '</br>';
-            }
-            document.getElementById('values').innerHTML = text;
+        function show() {
+            document.getElementById('title').style.color = 'magenta';
         }
     </script>
 </body>

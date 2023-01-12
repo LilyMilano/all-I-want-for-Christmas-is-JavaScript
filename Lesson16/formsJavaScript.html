@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Form</title>
+</head>
+
+<body>
+    <form id="form">
+        Name: <input type="text" name="name" value="Regina" />
+        <br>
+        Last Name: <input type="text" name="lastname" value="Phalange" />
+        <br>
+    </form>
+    <button onclick='showValues()'>Retrieve</button>
+    <div id="values"></div>
+    <script>
+        function showValues() {
+            let content = document.forms['form'];
+            let text = '';
+            // for (let element of content) {
+            //     text += element.value + '</br>';
+            // }
+            // To access the elements individually:
+            let name = content['name'];
+            let lastname = content['lastname'];
+            text = name.value + '</br>' + lastname.value;
+            document.getElementById('values').innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>
