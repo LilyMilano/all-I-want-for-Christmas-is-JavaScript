@@ -7,22 +7,16 @@
 </head>
 
 <body>
-    <!-- Event Handlers with HTML DOM and JavaScript -->
-    <!-- ........................................... -->
-    <!-- HTML DOM events allow JavaScript to register different event handlers on elements in an HTML document. Events are normally used in combination with functions, and the function will not be executed before the event occurs (such as when a user clicks a button). -->
-    <!-- ........................................... -->
-    <!-- <h1 onclick="this.innerHTML='New Title'">JavaScript HTML DOM</h1>
-    <button onclick="show()">Show</button> -->
-    <!-- ........................................... -->
+    <!-- Associate Events to HTML Elements with JavaScript -->
 
-    <h1 onclick="changeText(this)">JavaScript HTML DOM</h1>
+    <h1 id="heading1">JavaScript HTML DOM</h1>
     <br>
     <script>
-        function changeText(heading) {
-            console.log(heading);
-            console.log(heading.innerHTML);
-            heading.innerHTML = 'Modified heading';
-            console.log(heading.innerHTML);
+        // changeText is a callback function
+        document.getElementById('heading1').onclick = changeText;
+
+        function changeText() {
+            document.getElementById('heading1').innerHTML = 'New heading';
         }
     </script>
 </body>
