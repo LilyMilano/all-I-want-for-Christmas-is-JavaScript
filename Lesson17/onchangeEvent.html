@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript HTML DOM</title>
+</head>
+
+<body>
+    <h1 id="heading1">JavaScript HTML DOM</h1>
+    <br>
+    <!-- The onchange event occurs when the value of an HTML element is changed. -->
+    Name: <input type="text" id="name" onchange="convert(this)" />
+    <script>
+        function convert(inputName) {
+            // let name = document.getElementById('name');
+            inputName.value = inputName.value.toUpperCase();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript HTML DOM</title>
+</head>
+
+<body>
+    <!-- The onmouseover event occurs when the mouse pointer enters an element.
+    The onmouseover event is often used together with the onmouseout event, which occurs when the mouse pointer leaves the element. -->
+
+    <h1 id="heading1" onmouseover ="red(this)" onmouseout="blue(this)">
+        JavaScript HTML DOM
+    </h1>
+    <br>
+    <script>
+        function red(heading1){
+            heading1.style.color = 'red';
+        }
+        function blue(heading1){
+            heading1.style.color = 'blueviolet';
+        }
+    </script>
+</body>
+
+</html>

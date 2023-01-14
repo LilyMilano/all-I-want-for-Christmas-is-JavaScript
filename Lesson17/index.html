@@ -7,14 +7,25 @@
 </head>
 
 <body>
-    <h1 id="heading1">JavaScript HTML DOM</h1>
+    <!-- The onmousedown event occurs when a user presses a mouse button over an HTML element.
+    The onmouseup event occurs when a mouse button is released over an element. -->
+
+    <h1 id="heading1" onmousedown="green(this)" onmouseup="blue(this)" onclick="purple(this)">
+        JavaScript HTML DOM
+    </h1>
     <br>
-    <!-- The onchange event occurs when the value of an HTML element is changed. -->
-    Name: <input type="text" id="name" onchange="convert(this)"/>
     <script>
-        function convert(inputName){
-            // let name = document.getElementById('name');
-            inputName.value = inputName.value.toUpperCase();
+        function green(heading1) {
+            console.log('onmousedown change to green');
+            heading1.style.color = 'green';
+        }
+        function blue(heading1) {
+            console.log('onmouseup change to blue');
+            heading1.style.color = 'blue';
+        }
+        function purple(heading1) {
+            console.log('onclick change to purple');
+            heading1.style.color = 'purple';
         }
     </script>
 </body>
