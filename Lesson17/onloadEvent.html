@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript HTML DOM</title>
+</head>
+
+<body onload="enter()">
+    <!-- The onload event occurs when an object has been loaded. -->
+    <h1 id="heading1">JavaScript HTML DOM</h1>
+    <br>
+    <div id='show'></div>
+    <script>
+        function enter(){
+            alert('By accessing the web page');
+            let text = '';
+            if(navigator.cookieEnabled){
+                text = 'Cookies are enabled';
+            }
+            else{
+                text = 'Cookies are disabled';
+            }
+            document.getElementById('show').innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>

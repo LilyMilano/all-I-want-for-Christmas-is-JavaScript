@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript HTML DOM</title>
+</head>
+
+<body>
+    <!-- Associate Events to HTML Elements with JavaScript -->
+
+    <h1 id="heading1">JavaScript HTML DOM</h1>
+    <br>
+    <div id='show'></div>
+    <script>
+        // changeText is a callback function
+        document.getElementById('heading1').onclick = changeText;
+
+        function changeText() {
+            // document.getElementById('heading1').innerHTML = 'New heading';
+            document.getElementById('show').innerHTML = 'New Content';
+        }
+    </script>
+</body>
+
+</html>
