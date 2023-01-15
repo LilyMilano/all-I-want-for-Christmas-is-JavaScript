@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript HTML DOM</title>
+</head>
+
+<body>
+
+    <!-- Arrow functions in addEventListener with JavaScript -->
+    <!-- The addEventListener() method attaches an event handler to a document. -->
+
+    <h1 id="heading1">JavaScript HTML DOM</h1>
+    <br>
+    Name: <input type="text" id="name" />
+    <br><br>
+    Last Name: <input type="text" id="lastname" />
+    <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+    <script>
+        // For instance arrow functions in elementId 'name':
+        // Important: Arrow functions are not reusable code.
+        document.getElementById('name').addEventListener('focus', (event)=> {
+            event.target.style.background = 'indianred';
+        });
+        document.getElementById('name').addEventListener('blur', (event)=>{
+            event.target.style.background = 'white';
+        });
+        // ........................................................................
+        // Callback functions in elementId 'lastname':
+
+        document.getElementById('lastname').addEventListener('focus', change);
+        document.getElementById('lastname').addEventListener('blur', backTo);
+
+        // Defining Callback Functions:
+
+        function change(event) {
+            let component = event.target;
+            component.style.background = 'orchid';
+        }
+        function backTo(event) {
+            event.target.style.background = 'white';
+        }
+    </script>
+    <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+</body>
+
+</html>

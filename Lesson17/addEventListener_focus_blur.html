@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript HTML DOM</title>
+</head>
+
+<body>
+    <!-- The addEventListener() method attaches an event handler to a document. -->
+
+    <h1 id="heading1">JavaScript HTML DOM</h1>
+    <br>
+    Name: <input type="text" id="name" />
+    <br><br>
+    Last Name: <input type="text" id="lastname" />
+    <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+    <script>
+        document.getElementById('name').addEventListener('focus', change);
+        document.getElementById('name').addEventListener('blur', backTo);
+        // ........................................................................
+        document.getElementById('lastname').addEventListener('focus', change);
+        document.getElementById('lastname').addEventListener('blur', backTo);
+
+        // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+        function change(event) {
+            let component = event.target;
+            component.style.background = 'orchid';
+        }
+        function backTo(event) {
+            event.target.style.background = 'white';
+        }
+    </script>
+    <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+</body>
+
+</html>

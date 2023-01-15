@@ -7,32 +7,30 @@
 </head>
 
 <body>
-    <!-- The addEventListener() method attaches an event handler to a document. -->
-
+    <!-- What is event delegation or useCapture?
+    Event delegation is a mechanism through which we avoid assigning event listeners to multiple specific DOM nodes, assigning an event listener to only one parent node that contains the rest of these nodes.
+    
+    The advantage of using event delegation is that in the hypothetical case of having n elements with the btn class, we have only registered one event listener for all these elements, while without event delegation we must register n event listeners, that is, one for each node. -->
+    <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
     <h1 id="heading1">JavaScript HTML DOM</h1>
     <br>
-    Name: <input type="text" id="name" />
-    <br><br>
-    Last Name: <input type="text" id="lastname" />
+    <form id="formulary">
+        Name: <input type="text" id="name" />
+        <br><br>
+        Last Name: <input type="text" id="lastname" />
+    </form>
     <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
     <script>
-        document.getElementById('name').addEventListener('focus', change);
-        document.getElementById('name').addEventListener('blur', backTo);
-        // ........................................................................
-        document.getElementById('lastname').addEventListener('focus', change);
-        document.getElementById('lastname').addEventListener('blur', backTo);
-
-        // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-        function change(event) {
-            let component = event.target;
-            component.style.background = 'orchid';
-        }
-        function backTo(event) {
+        const formulary = document.getElementById('formulary');
+        
+        formulary.addEventListener('focus', (event) => {
+            event.target.style.background = 'deeppink';
+        }, true);
+        formulary.addEventListener('blur', (event) => {
             event.target.style.background = 'white';
-        }
+        }, true);
+        
     </script>
-    <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
 </body>
 
