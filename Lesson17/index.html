@@ -7,27 +7,33 @@
 </head>
 
 <body>
-    <!-- The onmousedown event occurs when a user presses a mouse button over an HTML element.
-    The onmouseup event occurs when a mouse button is released over an element. -->
+    <!-- The addEventListener() method attaches an event handler to a document. -->
 
-    <h1 id="heading1" onmousedown="green(this)" onmouseup="blue(this)" onclick="purple(this)">
-        JavaScript HTML DOM
-    </h1>
+    <h1 id="heading1">JavaScript HTML DOM</h1>
     <br>
+    Name: <input type="text" id="name" />
+    <br><br>
+    Last Name: <input type="text" id="lastname" />
+    <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
     <script>
-        function green(heading1) {
-            console.log('onmousedown change to green');
-            heading1.style.color = 'green';
+        document.getElementById('name').addEventListener('focus', change);
+        document.getElementById('name').addEventListener('blur', backTo);
+        // ........................................................................
+        document.getElementById('lastname').addEventListener('focus', change);
+        document.getElementById('lastname').addEventListener('blur', backTo);
+
+        // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+        function change(event) {
+            let component = event.target;
+            component.style.background = 'orchid';
         }
-        function blue(heading1) {
-            console.log('onmouseup change to blue');
-            heading1.style.color = 'blue';
-        }
-        function purple(heading1) {
-            console.log('onclick change to purple');
-            heading1.style.color = 'purple';
+        function backTo(event) {
+            event.target.style.background = 'white';
         }
     </script>
+    <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
 </body>
 
 </html>

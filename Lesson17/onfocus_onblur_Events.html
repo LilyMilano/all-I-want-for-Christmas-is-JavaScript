@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript HTML DOM</title>
+</head>
+
+<body>
+    <!-- The onfocus event occurs when an element gets focus. The onfocus event is often used on input fields.
+        
+    The onblur event occurs when an HTML element loses focus.It is often used on input fields.The onblur event is often used with form validation (when the user leaves a form field). -->
+
+    <h1 id="heading1">JavaScript HTML DOM</h1>
+    <br>
+    Name: <input type="text" onfocus="change(this)" onblur="backTo(this)" />
+    <br><br>
+    Last Name: <input type="text" onfocus="change(this)" onblur="backTo(this)" />
+    <script>
+        function change(inputElement) {
+            inputElement.style.background = 'lightpink';
+        }
+        function backTo(inputElement) {
+            inputElement.style.background = 'white';
+        }
+    </script>
+</body>
+
+</html>
