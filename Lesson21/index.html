@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,40 @@
     <title>Budget Application</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <div class="heading">
+        <div class="budget">
+            <!-- ..................................................................-->
+            <div class="budget_title">
+                Available Budget
+            </div>
+            <div class="budget_value">+ 2,000.00</div>
+            <!-- ..................................................................-->
+            <div class="budget_income styleCleaner">
+                <div class="budget_income--text">Incomes</div>
+                <div class="right">
+                    <div class="budget_income--value">+4,000.00</div>
+                    <div class="budget_income--percentage">&nbsp;</div>
+                </div>
+            </div>
+            <!-- ..................................................................-->
+            <div class="budget_outflow styleCleaner">
+                <div class="budget_outflow--text">Outflows</div>
+                <div class="right styleCleaner">
+                    <div class="budget_outflow--value">-1,900.00</div>
+                    <div class="budget_outflow--percentage">45%</div>
+                </div>
+            </div>
+
+            <!-- ..................................................................-->
+        </div>
+    </div>
+
     <script src="js/Data.js"></script>
     <script src="js/Income.js"></script>
     <script src="js/Outflow.js"></script>
     <script src="js/app.js"></script>
 </body>
+
 </html>
