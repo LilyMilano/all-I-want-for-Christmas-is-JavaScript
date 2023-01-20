@@ -1,4 +1,4 @@
-const incomes = [new Income('Salary', 2100.0), new Income('Car sale', 1500)];
+const incomes = [new Income('Lottery', 2100.0), new Income('Car sale', 1500)];
 
 const outflows = [
 	new Outflow('Apartment rent', 900),
@@ -70,13 +70,22 @@ const createIncomeHTML = (income) => {
         <div class="element_value">${currencyFormat(income.value)}</div>
         <div class="element_delete">
             <button class='element_delete--btn'>
-                <ion-icon name="close-circle-outline"></ion-icon>
+                <ion-icon name="close-circle-outline" onclick='deleteIncome(${
+									income.id
+								})'></ion-icon>
             </button>
         </div>
     </div>
 </div>
 	`;
 	return incomeHTML;
+};
+
+const deleteIncome = (id) => {
+	let indexToDelete = incomes.findIndex((income) => income.id === id);
+	incomes.splice(indexToDelete, 1);
+	loadHeading();
+	loadIncomes();
 };
 
 const loadOutflows = () => {
@@ -94,15 +103,24 @@ const createOutflowHTML = (outflow) => {
     <div class="right styleCleaner">
         <div class="element_value">- ${currencyFormat(outflow.value)}</div>
         <div class="element_percentage">${percentageFormat(
-					outflow.value/totalIncomes()
+					outflow.value / totalOutflows()
 				)}</div>
         <div class="element_delete">
             <button class='element_delete--btn'>
-                <ion-icon name="close-circle-outline"></ion-icon>
+                <ion-icon name="close-circle-outline" onclick='deleteOutflow(${
+									outflow.id
+								})'></ion-icon>
             </button>
         </div>
     </div>
 </div>
 	`;
 	return outflowHTML;
+};
+
+let deleteOutflow = (id) => {
+	let indexToDelete = outflows.findIndex((outflow) => outflow.id === id);
+	outflows.splice(indexToDelete, 1);
+	loadHeading();
+	loadOutflows();
 };
