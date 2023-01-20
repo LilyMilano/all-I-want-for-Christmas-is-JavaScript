@@ -10,6 +10,7 @@
 </head>
 
 <body onload="loadApp()">
+    <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
     <div class="heading">
         <div class="budget">
             <!-- ..................................................................-->
@@ -37,11 +38,89 @@
             <!-- ..................................................................-->
         </div>
     </div>
+    <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+    <div class="container styleCleaner">
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+        <div class="income">
+            <h2 class="income_title">Incomes</h2>
+            <div id="incomes-list">
+                <!-- ..................................................................-->
+
+                <div class="element styleCleaner">
+                    <div class="element_description">Salary</div>
+                    <div class="right styleCleaner">
+                        <div class="element_value">+ 2,200.00</div>
+                        <div class="element_delete">
+                            <button class='element_delete--btn'>
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ..................................................................-->
+
+                <div class="element styleCleaner">
+                    <div class="element_description">Car sale</div>
+                    <div class="right styleCleaner">
+                        <div class="element_value">+ 1,500.00</div>
+                        <div class="element_delete">
+                            <button class='element_delete--btn'>
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ..................................................................-->
+            </div>
+        </div>
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+        <div class="outflow">
+            <h2 class="outflow_title">Outflows</h2>
+            <div id="outflows-list">
+                <!-- ..................................................................-->
+
+                <div class="element styleCleaner">
+                    <div class="element_description">Apartment rental</div>
+                    <div class="right styleCleaner">
+                        <div class="element_value">- 900.00</div>
+                        <div class="element_percentage">21%</div>
+                        <div class="element_delete">
+                            <button class='element_delete--btn'>
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ..................................................................-->
+
+                <div class="element styleCleaner">
+                    <div class="element_description">Clothes</div>
+                    <div class="right styleCleaner">
+                        <div class="element_value">- 400.00</div>
+                        <div class="element_percentage">10%</div>
+                        <div class="element_delete">
+                            <button class='element_delete--btn'>
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ..................................................................-->
+
+            </div>
+        </div>
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+    </div>
+    <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
     <script src="js/Data.js"></script>
     <script src="js/Income.js"></script>
     <script src="js/Outflow.js"></script>
     <script src="js/app.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
 
 </html>

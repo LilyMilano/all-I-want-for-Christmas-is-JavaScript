@@ -1,12 +1,14 @@
-const incomes = [new Income('Salary', 2000.0), new Income('Car sale', 1500)];
+const incomes = [new Income('Salary', 2100.0), new Income('Car sale', 1500)];
 
 const outflows = [
-	new Outflow('Apartment rental', 900),
+	new Outflow('Apartment rent', 900),
 	new Outflow('Clothes', 400),
 ];
 
 let loadApp = () => {
 	loadHeading();
+	loadIncomes();
+	loadOutflows();
 };
 
 let totalIncomes = () => {
@@ -50,4 +52,57 @@ const percentageFormat = (value) => {
 		style: 'percent',
 		minimumFractionDigits: 2,
 	});
+};
+
+const loadIncomes = () => {
+	let incomesHTML = '';
+	for (let income of incomes) {
+		incomesHTML += createIncomeHTML(income);
+	}
+	document.getElementById('incomes-list').innerHTML = incomesHTML;
+};
+
+const createIncomeHTML = (income) => {
+	let incomeHTML = `
+	<div class="element styleCleaner">
+    <div class="element_description">${income.description}</div>
+    <div class="right styleCleaner">
+        <div class="element_value">${currencyFormat(income.value)}</div>
+        <div class="element_delete">
+            <button class='element_delete--btn'>
+                <ion-icon name="close-circle-outline"></ion-icon>
+            </button>
+        </div>
+    </div>
+</div>
+	`;
+	return incomeHTML;
+};
+
+const loadOutflows = () => {
+	let outflowsHTML = '';
+	for (let outflow of outflows) {
+		outflowsHTML += createOutflowHTML(outflow);
+	}
+	document.getElementById('outflows-list').innerHTML = outflowsHTML;
+};
+
+const createOutflowHTML = (outflow) => {
+	let outflowHTML = `
+	<div class="element styleCleaner">
+    <div class="element_description">${outflow.description}</div>
+    <div class="right styleCleaner">
+        <div class="element_value">- ${currencyFormat(outflow.value)}</div>
+        <div class="element_percentage">${percentageFormat(
+					outflow.value/totalIncomes()
+				)}</div>
+        <div class="element_delete">
+            <button class='element_delete--btn'>
+                <ion-icon name="close-circle-outline"></ion-icon>
+            </button>
+        </div>
+    </div>
+</div>
+	`;
+	return outflowHTML;
 };
