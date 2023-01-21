@@ -10,7 +10,7 @@
 </head>
 
 <body onload="loadApp()">
-    <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+    <!-- :::::::::::::::::::::::::HEADING SECTION::::::::::::::::::::::: -->
     <div class="heading">
         <div class="budget">
             <!-- ..................................................................-->
@@ -38,9 +38,28 @@
             <!-- ..................................................................-->
         </div>
     </div>
-    <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+    <!-- :::::::::::::::::::::::FORM SECTION::::::::::::::::::::::::: -->
+
+    <form id="formulary" onsubmit="return false;">
+        <div class="add">
+            <div class="add_container">
+                <select class="add_type" id="type">
+                    <option value="income" selected>+</option>
+                    <option value="outflow">-</option>
+                </select>
+                <input type="text" class="add_description" placeholder="Write a brief description" id="description" />
+                <input type="number" class="add_value" placeholder="Value" id="value" step="any" />
+                <button class="add_btn" onclick="addData()">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </form>
+
+
+    <!-- :::::::::::::::::INCOMES AND OUTFLOWS SECTION::::::::::::::::: -->
     <div class="container styleCleaner">
-        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+        <!-- :::::::::::::::::::::::INCOMES::::::::::::::::::::::::::::: -->
 
         <div class="income">
             <h2 class="income_title">Incomes</h2>
@@ -74,7 +93,7 @@
                 <!-- ..................................................................-->
             </div>
         </div>
-        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+        <!-- :::::::::::::::::::::::OUTFLOWS:::::::::::::::::::::::::::: -->
 
         <div class="outflow">
             <h2 class="outflow_title">Outflows</h2>
@@ -114,7 +133,7 @@
         </div>
         <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
     </div>
-    <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+    <!-- ::::::::::::::::::::::::::SCRIPTS:::::::::::::::::::::::::::::: -->
 
     <script src="js/Data.js"></script>
     <script src="js/Income.js"></script>

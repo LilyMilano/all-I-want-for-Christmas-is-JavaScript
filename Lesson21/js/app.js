@@ -124,3 +124,21 @@ let deleteOutflow = (id) => {
 	loadHeading();
 	loadOutflows();
 };
+
+let addData = () => {
+	let formulary = document.forms['formulary'];
+	let type = formulary['type'];
+	let description = formulary['description'];
+	let value = formulary['value'];
+	if (description.value !== '' && value.value !== '') {
+		if (type.value === 'income') {
+			incomes.push(new Income(description.value, +value.value));
+			loadHeading();
+			loadIncomes();
+		} else if (type.value === 'outflow') {
+			outflows.push(new Outflow(description.value, +value.value));
+			loadHeading();
+			loadOutflows();
+		}
+	}
+};
